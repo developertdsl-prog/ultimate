@@ -1,4 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
+import { Lock } from 'lucide-react';
+import Input from '../components/Input';
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -27,15 +29,23 @@ const ResetPassword = () => {
           </div>
           
           <form className="auth-form" onSubmit={handleSubmit}>
-            <div className="input-group">
-              <label>New Password</label>
-              <input type="password" placeholder="••••••••" required />
-            </div>
+            <Input
+              id="reset-password"
+              label="New Password"
+              type="password"
+              placeholder="••••••••"
+              icon={<Lock size={18} />}
+              required
+            />
             
-            <div className="input-group">
-              <label>Confirm Password</label>
-              <input type="password" placeholder="••••••••" required />
-            </div>
+            <Input
+              id="reset-confirm-password"
+              label="Confirm Password"
+              type="password"
+              placeholder="••••••••"
+              icon={<Lock size={18} />}
+              required
+            />
             
             <ul className="password-checklist mb-32">
               <li className="valid">Minimum 8 characters</li>

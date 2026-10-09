@@ -3,18 +3,18 @@ import { useRef } from 'react';
 
 const OTP = () => {
   const navigate = useNavigate();
-  const inputRefs = [useRef(), useRef(), useRef(), useRef()];
+  const inputRefs = useRef([]);
 
   const handleInput = (index, e) => {
     const value = e.target.value;
     if (value.length === 1 && index < 3) {
-      inputRefs[index + 1].current.focus();
+      inputRefs.current[index + 1]?.focus();
     }
   };
 
   const handleKeyDown = (index, e) => {
     if (e.key === 'Backspace' && !e.target.value && index > 0) {
-      inputRefs[index - 1].current.focus();
+      inputRefs.current[index - 1]?.focus();
     }
   };
 
@@ -42,10 +42,10 @@ const OTP = () => {
           
           <form className="auth-form" onSubmit={handleSubmit}>
             <div className="otp-inputs flex-center mb-32">
-              {inputRefs.map((ref, index) => (
+              {[0, 1, 2, 3].map((index) => (
                 <input
                   key={index}
-                  ref={ref}
+                  ref={(el) => { inputRefs.current[index] = el; }}
                   type="text"
                   maxLength="1"
                   className="otp-input"

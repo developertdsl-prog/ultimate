@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Mail, Lock, Eye, EyeOff, ArrowLeft, Sparkles, ShieldCheck, Check } from 'lucide-react';
+import { Mail, Lock, ArrowLeft, Sparkles, ShieldCheck, Check } from 'lucide-react';
+import Input from '../components/Input';
 
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(true);
-  const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [socialLoading, setSocialLoading] = useState(null);
   const [error, setError] = useState('');
@@ -168,50 +168,29 @@ const Login = () => {
 
           {/* Auth Form */}
           <form className="auth-form" onSubmit={handleSubmit} noValidate>
-            <div className="input-group">
-              <label htmlFor="login-email">Email Address</label>
-              <div className="input-with-icon-wrapper">
-                <span className="input-icon-left">
-                  <Mail size={18} />
-                </span>
-                <input
-                  id="login-email"
-                  type="email"
-                  placeholder="name@example.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  autoComplete="email"
-                  required
-                />
-              </div>
-            </div>
+            <Input
+              id="login-email"
+              label="Email Address"
+              type="email"
+              placeholder="name@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              autoComplete="email"
+              icon={<Mail size={18} />}
+              required
+            />
 
-            <div className="input-group">
-              <label htmlFor="login-password">Password</label>
-              <div className="input-with-icon-wrapper">
-                <span className="input-icon-left">
-                  <Lock size={18} />
-                </span>
-                <input
-                  id="login-password"
-                  type={showPassword ? 'text' : 'password'}
-                  placeholder="••••••••"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  autoComplete="current-password"
-                  required
-                />
-                <button
-                  type="button"
-                  className="password-toggle-btn"
-                  onClick={() => setShowPassword(!showPassword)}
-                  title={showPassword ? 'Hide password' : 'Show password'}
-                  aria-label={showPassword ? 'Hide password' : 'Show password'}
-                >
-                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                </button>
-              </div>
-            </div>
+            <Input
+              id="login-password"
+              label="Password"
+              type="password"
+              placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="current-password"
+              icon={<Lock size={18} />}
+              required
+            />
 
             {/* Remember Me & Forgot Password Row */}
             <div className="auth-options-row">

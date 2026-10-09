@@ -1,4 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
+import { Mail } from 'lucide-react';
+import Input from '../components/Input';
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
@@ -29,10 +31,14 @@ const ForgotPassword = () => {
           </div>
           
           <form className="auth-form" onSubmit={handleSubmit}>
-            <div className="input-group">
-              <label>Email Address</label>
-              <input type="email" placeholder="name@example.com" required />
-            </div>
+            <Input
+              id="forgot-email"
+              label="Email Address"
+              type="email"
+              placeholder="name@example.com"
+              icon={<Mail size={18} />}
+              required
+            />
             
             <button type="submit" className="btn btn-primary auth-btn w-full">Send Verification Code</button>
             

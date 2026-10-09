@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { User, Mail, Lock } from 'lucide-react';
+import Input from '../components/Input';
 
 const SignUp = () => {
   return (
@@ -19,22 +21,38 @@ const SignUp = () => {
           </div>
           
           <form className="auth-form">
-            <div className="input-group">
-              <label>Full Name</label>
-              <input type="text" placeholder="Jane Doe" />
-            </div>
-            <div className="input-group">
-              <label>Email Address</label>
-              <input type="email" placeholder="name@example.com" />
-            </div>
-            <div className="input-group">
-              <label>Password</label>
-              <input type="password" placeholder="••••••••" />
-            </div>
-            <div className="input-group">
-              <label>Confirm Password</label>
-              <input type="password" placeholder="••••••••" />
-            </div>
+            <Input
+              id="signup-name"
+              label="Full Name"
+              type="text"
+              placeholder="Jane Doe"
+              icon={<User size={18} />}
+              required
+            />
+            <Input
+              id="signup-email"
+              label="Email Address"
+              type="email"
+              placeholder="name@example.com"
+              icon={<Mail size={18} />}
+              required
+            />
+            <Input
+              id="signup-password"
+              label="Password"
+              type="password"
+              placeholder="••••••••"
+              icon={<Lock size={18} />}
+              required
+            />
+            <Input
+              id="signup-confirm-password"
+              label="Confirm Password"
+              type="password"
+              placeholder="••••••••"
+              icon={<Lock size={18} />}
+              required
+            />
             
             <div className="flex-center" style={{ gap: '8px', marginBottom: '24px' }}>
               <input type="checkbox" id="terms" style={{ width: '16px', height: '16px' }} />

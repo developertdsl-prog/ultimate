@@ -787,3 +787,227 @@ img {
     font-size: 1.8rem;
   }
 }
+
+/* ==========================================================================
+   Reusable UI Input Component Styles
+   ========================================================================== */
+.ui-input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+  position: relative;
+  text-align: left;
+}
+
+.ui-input-group.w-full {
+  width: 100%;
+}
+
+.ui-input-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+  color: rgba(0, 0, 0, 0.65);
+  user-select: none;
+}
+
+.ui-input-required-star {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.ui-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.ui-input-field {
+  width: 100%;
+  padding: 13px 18px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  background-color: var(--white);
+  color: var(--dark);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.ui-input-field::placeholder {
+  color: rgba(0, 0, 0, 0.35);
+  font-weight: 400;
+}
+
+.ui-input-field:hover:not(:disabled) {
+  border-color: rgba(0, 0, 0, 0.22);
+}
+
+.ui-input-field:focus {
+  border-color: var(--primary);
+  background-color: var(--white);
+  box-shadow: 0 0 0 4px rgba(240, 98, 146, 0.15);
+}
+
+/* Left & Right Icons Padding */
+.ui-input-field.has-left-icon {
+  padding-left: 44px !important;
+}
+
+.ui-input-field.has-right-icon {
+  padding-right: 44px !important;
+}
+
+.ui-input-icon-left {
+  position: absolute;
+  left: 14px;
+  color: rgba(0, 0, 0, 0.38);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  z-index: 1;
+}
+
+.ui-input-wrapper:focus-within .ui-input-icon-left {
+  color: var(--primary);
+}
+
+.ui-input-icon-right {
+  position: absolute;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.ui-input-toggle-btn {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: rgba(0, 0, 0, 0.4);
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+.ui-input-toggle-btn:hover {
+  color: var(--dark);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Sizes */
+.ui-input-wrapper.size-sm .ui-input-field {
+  padding: 9px 14px;
+  font-size: 0.85rem;
+}
+.ui-input-wrapper.size-sm .ui-input-field.has-left-icon {
+  padding-left: 38px !important;
+}
+.ui-input-wrapper.size-sm .ui-input-field.has-right-icon {
+  padding-right: 38px !important;
+}
+.ui-input-wrapper.size-sm .ui-input-icon-left {
+  left: 11px;
+}
+.ui-input-wrapper.size-sm .ui-input-toggle-btn {
+  right: 8px;
+}
+
+.ui-input-wrapper.size-lg .ui-input-field {
+  padding: 16px 22px;
+  font-size: 1.05rem;
+}
+.ui-input-wrapper.size-lg .ui-input-field.has-left-icon {
+  padding-left: 50px !important;
+}
+.ui-input-wrapper.size-lg .ui-input-field.has-right-icon {
+  padding-right: 50px !important;
+}
+
+/* Variants */
+.ui-input-wrapper.variant-filled .ui-input-field {
+  background-color: #FAF6F8;
+  border-color: transparent;
+}
+.ui-input-wrapper.variant-filled .ui-input-field:hover:not(:disabled) {
+  background-color: #F5EEF2;
+}
+.ui-input-wrapper.variant-filled .ui-input-field:focus {
+  background-color: var(--white);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(240, 98, 146, 0.15);
+}
+
+/* Error State */
+.ui-input-group.has-error .ui-input-field {
+  border-color: #E53935 !important;
+  background-color: #FFF9F9;
+}
+
+.ui-input-group.has-error .ui-input-field:focus {
+  box-shadow: 0 0 0 4px rgba(229, 57, 53, 0.15) !important;
+}
+
+.ui-input-group.has-error .ui-input-icon-left {
+  color: #E53935;
+}
+
+.ui-input-error-msg {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #E53935;
+  font-weight: 500;
+  animation: inputErrorFade 0.2s ease-out;
+}
+
+@keyframes inputErrorFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ui-input-helper-text {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+}
+
+/* Disabled State */
+.ui-input-group.is-disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.ui-input-group.is-disabled .ui-input-field {
+  background-color: #F5F5F7;
+  cursor: not-allowed;
+}
+
