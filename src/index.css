@@ -1012,6 +1012,280 @@ img {
 }
 
 /* ==========================================================================
+   Reusable UI Select Component Styles
+   ========================================================================== */
+.ui-select-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+  position: relative;
+  text-align: left;
+}
+
+.ui-select-group.w-full {
+  width: 100%;
+}
+
+.ui-select-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+  color: rgba(0, 0, 0, 0.65);
+  user-select: none;
+}
+
+.ui-select-required-star {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.ui-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.ui-select-field {
+  width: 100%;
+  padding: 13px 44px 13px 18px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  background-color: var(--white);
+  color: var(--dark);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.ui-select-field.is-placeholder {
+  color: rgba(0, 0, 0, 0.38);
+  font-weight: 400;
+}
+
+.ui-select-field option {
+  color: var(--dark);
+  background-color: var(--white);
+  font-weight: 400;
+}
+
+.ui-select-field:hover:not(:disabled) {
+  border-color: rgba(0, 0, 0, 0.22);
+}
+
+.ui-select-field:focus {
+  border-color: var(--primary);
+  background-color: var(--white);
+  box-shadow: 0 0 0 4px rgba(240, 98, 146, 0.15);
+}
+
+/* Left & Actions Padding */
+.ui-select-field.has-left-icon {
+  padding-left: 44px !important;
+}
+
+.ui-select-field.has-clear {
+  padding-right: 68px !important;
+}
+
+.ui-select-icon-left {
+  position: absolute;
+  left: 14px;
+  color: rgba(0, 0, 0, 0.38);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  z-index: 1;
+}
+
+.ui-select-wrapper:focus-within .ui-select-icon-left {
+  color: var(--primary);
+}
+
+.ui-select-actions {
+  position: absolute;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ui-select-clear-btn {
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.ui-select-clear-btn:hover {
+  background: rgba(0, 0, 0, 0.12);
+  color: var(--dark);
+}
+
+.ui-select-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+}
+
+.ui-select-wrapper:focus-within .ui-select-chevron {
+  color: var(--primary);
+  transform: rotate(180deg);
+}
+
+.ui-select-icon-right {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* Sizes */
+.ui-select-wrapper.size-sm .ui-select-field {
+  padding: 9px 38px 9px 14px;
+  font-size: 0.85rem;
+}
+.ui-select-wrapper.size-sm .ui-select-field.has-left-icon {
+  padding-left: 38px !important;
+}
+.ui-select-wrapper.size-sm .ui-select-field.has-clear {
+  padding-right: 58px !important;
+}
+.ui-select-wrapper.size-sm .ui-select-icon-left {
+  left: 11px;
+}
+.ui-select-wrapper.size-sm .ui-select-actions {
+  right: 10px;
+  gap: 4px;
+}
+
+.ui-select-wrapper.size-lg .ui-select-field {
+  padding: 16px 52px 16px 22px;
+  font-size: 1.05rem;
+}
+.ui-select-wrapper.size-lg .ui-select-field.has-left-icon {
+  padding-left: 50px !important;
+}
+.ui-select-wrapper.size-lg .ui-select-field.has-clear {
+  padding-right: 76px !important;
+}
+.ui-select-wrapper.size-lg .ui-select-actions {
+  right: 18px;
+}
+
+/* Variants */
+.ui-select-wrapper.variant-filled .ui-select-field {
+  background-color: #FAF6F8;
+  border-color: transparent;
+}
+.ui-select-wrapper.variant-filled .ui-select-field:hover:not(:disabled) {
+  background-color: #F5EEF2;
+}
+.ui-select-wrapper.variant-filled .ui-select-field:focus {
+  background-color: var(--white);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(240, 98, 146, 0.15);
+}
+
+.ui-select-wrapper.variant-minimal .ui-select-field {
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  background: transparent;
+  padding-left: 0;
+}
+.ui-select-wrapper.variant-minimal .ui-select-field:focus {
+  border-bottom-color: var(--primary);
+  box-shadow: none;
+}
+
+/* Error State */
+.ui-select-group.has-error .ui-select-field {
+  border-color: #E53935 !important;
+  background-color: #FFF9F9;
+}
+
+.ui-select-group.has-error .ui-select-field:focus {
+  box-shadow: 0 0 0 4px rgba(229, 57, 53, 0.15) !important;
+}
+
+.ui-select-group.has-error .ui-select-icon-left,
+.ui-select-group.has-error .ui-select-chevron {
+  color: #E53935;
+}
+
+.ui-select-error-msg {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #E53935;
+  font-weight: 500;
+  animation: selectErrorFade 0.2s ease-out;
+}
+
+@keyframes selectErrorFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ui-select-helper-text {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+}
+
+/* Disabled State */
+.ui-select-group.is-disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.ui-select-group.is-disabled .ui-select-field {
+  background-color: #F5F5F7;
+  cursor: not-allowed;
+}
+
+
+/* ==========================================================================
    UI Button Component Styles
    ========================================================================== */
 
