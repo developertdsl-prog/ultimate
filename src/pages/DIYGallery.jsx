@@ -4,7 +4,7 @@ const DIYGallery = () => {
   const projects = [
     { title: 'Artisan Beeswax Wraps', difficulty: 'Beginner', time: '30 mins', img: 'https://images.unsplash.com/photo-1605281317010-fe5ffe798156?q=80&w=600' },
     { title: 'Hand-Poured Soy Candles', difficulty: 'Intermediate', time: '2 hours', img: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=600' },
-    { title: 'Ceramic Trinket Dish', difficulty: 'Advanced', time: '3 days', img: 'https://images.unsplash.com/photo-1549490349-8643362247b5?q=80&w=600' }
+    { title: 'Ceramic Trincv cket Dish', difficulty: 'Advanced', time: '3 days', img: 'https://images.unsplash.com/photo-1549490349-8643362247b5?q=80&w=600' }
   ];
 
   return (
