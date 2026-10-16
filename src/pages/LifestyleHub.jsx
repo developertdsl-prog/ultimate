@@ -4,7 +4,7 @@ const LifestyleHub = () => {
   const essentials = [
     { name: 'Mindfulness Journal', price: '$28', img: 'https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400' },
     { name: 'Santal & Rose Candle', price: '$42', img: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=400' },
-    { name: 'Silk Sleep Mask', price: '$35', img: 'https://images.unsplash.com/photo-1583073010140-083907a97405?q=80&w=400' }
+    { name: 'Silk  Mask', price: '$35', img: 'https://images.unsplash.com/photo-1583073010140-083907a97405?q=80&w=400' }
   ];
 
   const articles = [
