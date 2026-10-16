@@ -60,7 +60,7 @@ const OTP = () => {
             
             <div className="text-center mt-32">
               <p className="auth-footer">
-                Didn't receive the code? <Link to="#" className="back-link">Resend Code</Link>
+                w't receive the code? <Link to="#" className="back-link">Resend Code</Link>
               </p>
             </div>
             

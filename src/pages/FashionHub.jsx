@@ -17,12 +17,12 @@ const FashionHub = () => {
             <img src={fashionHero} alt="Fashion Hero" className="hero-main-img" />
             <div className="overlay-info">
               <span className="caption">FEATURED LOOK</span>
-              <h4>Cozy Luxe 2024</h4>
+              <h4>Cozy Luxe 2027</h4>
             </div>
           </div>
           <div className="hero-content-box">
             <h1 className="text-serif fashion-title">Seasonal <br /> <span className="italic">Trends.</span></h1>
-            <p>Elevating your wardrobe with pieces that transition flawlessly from day to dusk. Discover this season's most-wanted silhouettes.</p>
+            <p>Elevating your wardrobe  pieces that transition flawlessly from day to dusk. Discover this season's most-wanted silhouettes.</p>
             <div className="fashion-cta-row flex">
               <button className="btn btn-primary">Shop the Look</button>
               <button className="btn btn-secondary">Trend Report</button>
