@@ -27,7 +27,7 @@ const ForgotPassword = () => {
               Ultimate Girl Hub
             </Link>
             <h1 className="text-serif">Forgot your password?</h1>
-            <p>Enter your email  below and we'll send you a verification code to reset your password.</p>
+            <p>Enter your email below and we'll send you a verification code to reset your password.</p>
           </div>
           
           <form className="auth-form" onSubmit={handleSubmit}>
